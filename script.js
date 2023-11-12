@@ -1,22 +1,23 @@
-*,
-::before,
-::after {
-  box-sizing: border-box;
+const countButton = document.querySelector("#countButton");
+const countNumber = document.querySelector("#countNumber");
+
+let counter;
+
+function countDown() {
+  counter = parseInt(countNumber.innerText);
+  counter--;
+  if (counter > 0) {
+    countNumber.innerText = counter;
+    setTimeout(countDown, 1000);
+  } else {
+    countNumber.innerText = 10;
+    countNumber.style.visibility = "hidden";
+    countButton.style.visibility = "visible";
+  }
 }
 
-:root {
-
-}
-
-html {
-  font-family:   ;
-  direction: ltr;
-  font-size:   ;
-}
-
-body {
-  margin: 0;
-  height:  ;
-  background-color: var(--page-background-color);
-  color: var(--page-text-color);
-} 
+countButton.addEventListener("click", function (event) {
+  countButton.style.visibility = "hidden";
+  countNumber.style.visibility = "visible";
+  setTimeout(countDown, 1000);
+});

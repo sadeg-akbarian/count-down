@@ -15,7 +15,30 @@ html {
 
 body {
   margin: 0;
-  height: 100;
-  background-color: var(--page-background-color);
-  color: var(--page-text-color);
+  height: 100vh;
+  background-color: hotpink;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+}
+
+.countButton {
+  border: 0;
+  font-size: 1.25rem;
+  padding: 0.75rem;
+  color: hotpink;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.countNumber {
+  font-size: 4rem;
+  font-weight: bold;
+  visibility: hidden;
 }
